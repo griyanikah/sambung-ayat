@@ -1,7 +1,7 @@
 "use client";
 
 import { Suspense } from "react";
-import ModeInner from "./modeinner";
+import ModeInner from "./ModeInner";
 
 export default function ModeClient() {
   return (
