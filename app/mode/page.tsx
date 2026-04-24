@@ -1,8 +1,8 @@
+import dynamic from "next/dynamic";
+
 export const dynamic = "force-dynamic";
 
-import dynamicImport from "next/dynamic";
-
-const ModeClient = dynamicImport(
+const ModeClient = dynamic(
   () => import("./mode-client"),
   { ssr: false }
 );
