@@ -2,11 +2,11 @@ import dynamic from "next/dynamic";
 
 export const dynamic = "force-dynamic";
 
-const ModeClient = dynamic(
-  () => import("./mode-client"),
+const ModeInner = dynamic(
+  () => import("./ModeInner"),
   { ssr: false }
 );
 
 export default function Page() {
-  return <ModeClient />;
+  return <ModeInner />;
 }
