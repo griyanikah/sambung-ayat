@@ -1,12 +1,12 @@
-import nextDynamic from "next/dynamic";
+import { Suspense } from "react";
+import ModeClient from "./mode-client";
 
 export const dynamic = "force-dynamic";
 
-const ModeInner = nextDynamic(
-  () => import("./ModeInner"),
-  { ssr: false }
-);
-
 export default function Page() {
-  return <ModeInner />;
+  return (
+    <Suspense fallback={<div>Memuat mode...</div>}>
+      <ModeClient />
+    </Suspense>
+  );
 }
