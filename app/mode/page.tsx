@@ -1,8 +1,8 @@
-import dynamic from "next/dynamic";
+import nextDynamic from "next/dynamic";
 
 export const dynamic = "force-dynamic";
 
-const ModeInner = dynamic(
+const ModeInner = nextDynamic(
   () => import("./ModeInner"),
   { ssr: false }
 );
