@@ -1,8 +1,10 @@
 "use client";
 
+export const dynamic = "force-dynamic";
+
 import { useSearchParams, useRouter } from "next/navigation";
 import { useState } from "react";
-import quranData from "@/dataset/quran.json";
+const quranData = require("@/dataset/quran.json");
 
 export default function ModeInner() {
   const params = useSearchParams();
@@ -11,7 +13,6 @@ export default function ModeInner() {
   const type = params.get("type") ?? "surah";
 
   const surahs = quranData as any[];
-
   const [selectedSurah, setSelectedSurah] = useState(1);
   const [startAyat, setStartAyat] = useState(1);
   const [endAyat, setEndAyat] = useState(7);
